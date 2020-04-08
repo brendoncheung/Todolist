@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#494A67</color>
+    <color name="colorPrimaryDark">#424360</color>
+    <color name="colorAccent">#76DC58</color>
+    <color name="toolbartitle">#FFFFFF</color>
+
+    <color name="todo_item_background">#494A67</color>
+    <color name="todo_item_checker_color">#27FFFFFF</color>
+    <color name="todo_item_description">#50FFFFFF</color>
+</resources>
