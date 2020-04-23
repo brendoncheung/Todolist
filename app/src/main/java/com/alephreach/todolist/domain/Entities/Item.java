@@ -6,7 +6,11 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
+
+// entity -> the joining table
+// parentColumns ->
 
 @Entity(tableName = "items", foreignKeys = {
         @ForeignKey(entity = Item.class,
@@ -23,10 +27,7 @@ public class Item {
     public String mTaskname;
 
     @ColumnInfo(name = "created_at")
-    public LocalDateTime mCreatedDate;
-
-    @ColumnInfo(name = "modified_at")
-    public LocalDateTime mModifiedDate;
+    public LocalDate mCreatedDate;
 
     @ColumnInfo(name = "group_id")
     public int mGroupId;
@@ -39,7 +40,6 @@ public class Item {
     public Item(String taskname, int groupId) {
         mTaskname = taskname;
         mGroupId = groupId;
-        mCreatedDate = LocalDateTime.now();
+        mCreatedDate = LocalDate.now();
     }
-
 }

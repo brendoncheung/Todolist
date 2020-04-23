@@ -12,9 +12,9 @@ public interface ItemRepository {
     Single<Item> getItemById(int id);
     Single<List<Item>> getAllItems();
 
-    Completable addItemToGroup(Item item);
+    Completable insertItem(Item item);
 
-    Completable updateItemById(int id, Item item);
+    Completable updateItem(Item item);
 
-    Completable deleteItemById(int id);
+    Completable deleteItem(Item item);
 }

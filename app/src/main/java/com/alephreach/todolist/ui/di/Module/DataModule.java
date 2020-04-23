@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Room;
 
 import com.alephreach.todolist.data.Database.Dao.GroupDao;
+import com.alephreach.todolist.data.Database.Dao.ItemDao;
 import com.alephreach.todolist.data.Database.TodoDatabase;
 
 import dagger.Module;
@@ -22,6 +23,9 @@ public class DataModule {
     GroupDao provideGroupDao(TodoDatabase todoDatabase) {
         return todoDatabase.mGroupDao();
     }
+
+    @Provides
+    ItemDao provideItemDao(TodoDatabase todoDatabase) { return todoDatabase.mItemDao(); }
 
 }
 

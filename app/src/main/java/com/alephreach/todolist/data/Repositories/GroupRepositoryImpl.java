@@ -2,6 +2,7 @@ package com.alephreach.todolist.data.Repositories;
 
 import com.alephreach.todolist.data.Database.Dao.GroupDao;
 import com.alephreach.todolist.domain.Entities.Group;
+import com.alephreach.todolist.domain.Entities.GroupItemJoin;
 import com.alephreach.todolist.domain.Repositories.GroupRepository;
 
 import java.util.List;
@@ -46,5 +47,10 @@ public class GroupRepositoryImpl implements GroupRepository {
     public Completable deleteGroup(Group group) {
         return mGroupDao.deleteGroup(group)
                 .subscribeOn(Schedulers.io());
+    }
+
+    @Override
+    public Single<GroupItemJoin> getItemsByGroup(int id) {
+        return mGroupDao.getItemByGroup(id);
     }
 }

@@ -2,11 +2,9 @@ package com.alephreach.todolist.domain.Entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity(tableName = "groups")
 public class Group {
@@ -23,5 +21,29 @@ public class Group {
 
     public Group(String groupname) {
         mGroupname = groupname;
+    }
+
+    public int getId() {
+        return mId;
+    }
+
+    public void setId(int id) {
+        mId = id;
+    }
+
+    public String getGroupname() {
+        return mGroupname;
+    }
+
+    public void setGroupname(String groupname) {
+        mGroupname = groupname;
+    }
+
+    public LocalDate getCreatedDate() {
+        return mCreatedDate;
+    }
+
+    public void setCreatedDate(LocalDate createdDate) {
+        mCreatedDate = createdDate;
     }
 }

@@ -1,6 +1,7 @@
 package com.alephreach.todolist.domain.Repositories;
 
 import com.alephreach.todolist.domain.Entities.Group;
+import com.alephreach.todolist.domain.Entities.GroupItemJoin;
 
 import java.util.List;
 
@@ -19,5 +20,6 @@ public interface GroupRepository {
 
     Completable deleteGroup(Group group);
 
+    Single<GroupItemJoin> getItemsByGroup(int id);
 
 }

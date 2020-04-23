@@ -5,9 +5,11 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 
 import com.alephreach.todolist.domain.Entities.Group;
+import com.alephreach.todolist.domain.Entities.GroupItemJoin;
 
 import java.util.List;
 
@@ -31,4 +33,10 @@ public interface GroupDao {
 
     @Delete
     public Completable deleteGroup(Group group);
+
+
+    // since room is doing two queries, you need to 
+    @Transaction
+    @Query("SELECT * FROM groups where id IN (:id)")
+    public Single<GroupItemJoin> getItemByGroup(int id);
 }
